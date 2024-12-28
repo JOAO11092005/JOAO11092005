@@ -39,7 +39,7 @@
 
 
  <div align="center">
-<br><p align="centre"><b>Visitantei</b></p>  
+<br><p align="centre"><b>Visitei</b></p>  
 <p align="center" theme="transparent"><img align="center" src="https://profile-counter.glitch.me/{JOAO11092005}/count.svg" /></p> 
 <br>
 </div>
