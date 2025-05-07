@@ -2,8 +2,11 @@ name: Gerar animação Snake
 
 on:
   schedule:
-    - cron: "0 0 * * *"  # Executa diariamente à meia-noite
+    - cron: "0 0 * * *"
   workflow_dispatch:
+
+permissions:
+  contents: write  # 👉 Permissão para fazer commit no repositório
 
 jobs:
   generate:
@@ -12,8 +15,6 @@ jobs:
     steps:
       - name: Checkout do repositório
         uses: actions/checkout@v3
-        with:
-          persist-credentials: false  # Impede o uso de credenciais padrão
 
       - name: Gerar animação Snake
         uses: Platane/snk@v3
@@ -27,5 +28,5 @@ jobs:
           git config --global user.name 'github-actions[bot]'
           git config --global user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add dist/github-contribution-grid-snake.svg
-          git commit -m "Atualizando animação Snake 🐍"
+          git commit -m "Atualizando animação Snake 🐍" || echo "Nada para commitar"
           git push
